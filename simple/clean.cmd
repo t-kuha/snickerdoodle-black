@@ -5,4 +5,4 @@ rmdir /S /Q .Xil
 
 del *.jou
 del *.log
-del *.dsa
+del petalinux\\*.dsa
