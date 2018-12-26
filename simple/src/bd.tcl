@@ -704,7 +704,7 @@ proc create_root_design { parentCell } {
   current_bd_instance $oldCurInst
 
   # Create PFM attributes
-  set_property PFM_NAME {vendor:lib:sd_blk:1.0} [get_files [current_bd_design].bd]
+  set_property PFM_NAME {krtkl.com:zynq:sd_blk:1.0} [get_files [current_bd_design].bd]
   set_property PFM.CLOCK {clk_out1 {id "0" is_default "true" proc_sys_reset "/proc_sys_reset_0"} clk_out2 {id "1" is_default "false" proc_sys_reset "/proc_sys_reset_1"} clk_out3 {id "2" is_default "false" proc_sys_reset "/proc_sys_reset_2"} clk_out4 {id "3" is_default "false" proc_sys_reset "/proc_sys_reset_3"}} [get_bd_cells /clk_wiz_0]
   set_property PFM.AXI_PORT {M_AXI_GP0 {memport "M_AXI_GP" sptag "" memory ""} M_AXI_GP1 {memport "M_AXI_GP" sptag "" memory ""} S_AXI_ACP {memport "S_AXI_ACP" sptag "" memory ""} S_AXI_HP0 {memport "S_AXI_HP" sptag "" memory ""} S_AXI_HP1 {memport "S_AXI_HP" sptag "" memory ""} S_AXI_HP2 {memport "S_AXI_HP" sptag "" memory ""} S_AXI_HP3 {memport "S_AXI_HP" sptag "" memory ""}} [get_bd_cells /processing_system7_0]
   set_property PFM.IRQ {In0 {} In1 {} In2 {} In3 {} In4 {} In5 {} In6 {} In7 {} In8 {} In9 {} In10 {} In11 {} In12 {} In13 {} In14 {} In15 {}} [get_bd_cells /xlconcat]
