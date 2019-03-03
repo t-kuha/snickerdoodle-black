@@ -22,7 +22,7 @@ $ vivado -mode batch -source create_vivado_project.tcl
 - Create project (usually can be skipped to "petalinux-build")
 
 ```bash
-$ export PRJ_NAME=prj
+$ export PRJ_NAME=sd_blk
 $ petalinux-create -t project -n ${PRJ_NAME} --template zynq
 $ petalinux-config -p ${PRJ_NAME} --get-hw-description=.
 
