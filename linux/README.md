@@ -10,7 +10,7 @@
 
 - Generate bitstream
 
-```bash
+```shell-session
 # This will also create HW definition file (_system.hdf)
 $ vivado -mode batch -source create_vivado_project.tcl
 ```
@@ -21,7 +21,7 @@ $ vivado -mode batch -source create_vivado_project.tcl
 
 - Create project (usually can be skipped to "petalinux-build")
 
-```bash
+```shell-session
 $ export PRJ_NAME=sd_blk
 $ petalinux-create -t project -n ${PRJ_NAME} --template zynq
 $ petalinux-config -p ${PRJ_NAME} --get-hw-description=.
@@ -46,15 +46,15 @@ $ petalinux-build --sdk -p ${PRJ_NAME}
 
 ## Generate BOOT.bin
 
-```bash
+```shell-session
 $ bootgen -arch zynq -image src/boot_bin_linux.bif -w -o BOOT.bin
 # or ...
 $ petalinux-package -p ${PRJ_NAME} --boot --format BIN \
 > --fsbl ${PRJ_NAME}/images/linux/zynq_fsbl.elf \
 > --u-boot ${PRJ_NAME}/images/linux/u-boot.elf \
-> --fpga ${PRJ_NAME}/project-spec/hw-description/z7_20_wrapper.bit
+> --fpga ${PRJ_NAME}/project-spec/hw-description/sd_blk_wrapper.bit
 # or ...
-# > --fpga _vivado/z7_20.runs/impl_1/z7_20_wrapper.bit
+# > --fpga _vivado/sd_blkruns/impl_1/sd_blk_wrapper.bit
 # BOOT.BIN is in ${PRJ_NAME}/images/linux/
 ```
 
@@ -72,7 +72,7 @@ $ petalinux-package -p ${PRJ_NAME} --boot --format BIN \
 
 ## Simulation in QEMU
 
-```bash
+```shell-session
 # Collect prebuilt image
 $ cd ${PRJ_NAME}
 $ petalinux-package --prebuilt
@@ -87,10 +87,11 @@ $ petalinux-boot --qemu --kernel
 
 - How to add libsdslib*.so
 
-    ```bash
+    ```shell-session
     $ petalinux-create -p ${PRJ_NAME} -t apps --template install --name sdslib --enable
     $ rm ${PRJ_NAME}/project-spec/meta-user/recipes-apps/sdslib/files/sdslib
-    $ cp -R ${XILINX_SDX}/target/aarch32-linux/lib/libsds_lib*.so ${PRJ_NAME}/project-spec/meta-user/recipes-apps/sdslib/files
+    $ cp -R ${XILINX_SDX}/target/aarch32-linux/lib/libsds_lib*.so \
+    ${PRJ_NAME}/project-spec/meta-user/recipes-apps/sdslib/files
 
     # Edit .bb file
     $ nano ${PRJ_NAME}/project-spec/meta-user/recipes-apps/sdslib/sdslib.bb
