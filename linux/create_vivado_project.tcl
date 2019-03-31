@@ -15,9 +15,9 @@ set_property board_part krtkl.com:snickerdoodle_black:part0:1.0 [current_project
 # import_files -fileset constrs_1 ${SRC_DIR}/Zybo-Z7-Master.xdc
 
 # Set IP repository paths
-set IP_REPOS { "src/ip" "vivado-library" } 
-set_property  ip_repo_paths  ${IP_REPOS}  [current_project]
-update_ip_catalog
+#set IP_REPOS { "src/ip" "vivado-library" } 
+#set_property  ip_repo_paths  ${IP_REPOS}  [current_project]
+#update_ip_catalog
 
 # Refresh IP Repositories
 update_ip_catalog -rebuild
