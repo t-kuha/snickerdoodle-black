@@ -8,14 +8,14 @@
 
 ### Create HW in Vivado
 
-```bash
+```shell-session
 # Create Vivado project
 $ vivado -mode batch -source create_vivado_project.tcl
 ```
 
 ### Build PetaLinux
 
-```bash
+```shell-session
 $ cd petalinux
 $ petalinux-create -t project -s sd_blk
 $ petalinux-build -p sd_blk
@@ -23,7 +23,7 @@ $ petalinux-build -p sd_blk
 
 ### Generate platform (w/o prebuilt data)
 
-```bash
+```shell-session
 # Create directory for platform components
 $ mkdir pfm_files/boot pfm_files/image
 
@@ -40,7 +40,7 @@ $ xsct create_sdsoc_pfm.tcl
 
 - Build _hello_world_
 
-```bash
+```shell-session
 $ mkdir _prj_init
 $ cd _prj_init
 $ sdscc ../src/hello_world.c -c -o hello_world.o -sds-pf ../_platform_init/sd_blk/export/sd_blk -sds-sys-config linux -target-os linux
@@ -49,7 +49,7 @@ $ sdscc hello_world.o -o hello_world.elf -sds-pf ../_platform_init/sd_blk/export
 
 - Copy prebuilt data
 
-```bash
+```shell-session
 $ mkdir pfm_files/prebuilt
 
 # system.bit file should be renamed to bitstream.bit
@@ -66,7 +66,7 @@ $ cp _prj_init/_sds/swstubs/portinfo.h   pfm_files/prebuilt
 
 - Use xsct in SDx directory (not the one in XSDK directory)
 
-```bash
+```shell-session
 $ xsct create_sdsoc_pfm.tcl
 ```
 
@@ -74,7 +74,7 @@ $ xsct create_sdsoc_pfm.tcl
 
 ### How to create Petalinux project
 
-```bash
+```shell-session
 cd petalinux
 
 export PRJ_NAME=sd_blk
@@ -100,7 +100,7 @@ petalinux-build --project ${PRJ_NAME}
 
 - Copy source code of comformance test from _< SDX installation directory >/samples/platforms/Conformance_
 
-```bash
+```shell-session
 # Build comformance test
 $ make PLATFORM=../platform/sd_blk OS=LINUX PLATFORM_TYPE=ZYNQ
 ```
