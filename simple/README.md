@@ -43,8 +43,10 @@ $ xsct create_sdsoc_pfm.tcl
 ```shell-session
 $ mkdir _prj_init
 $ cd _prj_init
-$ sdscc ../src/hello_world.c -c -o hello_world.o -sds-pf ../_platform_init/sd_blk/export/sd_blk -sds-sys-config linux -target-os linux
-$ sdscc hello_world.o -o hello_world.elf -sds-pf ../_platform_init/sd_blk/export/sd_blk -sds-sys-config linux -target-os linux
+$ sdscc ../src/hello_world.c -c -o hello_world.o \
+-sds-pf ../_platform_init/sd_blk/export/sd_blk -sds-sys-config linux -target-os linux
+$ sdscc hello_world.o -o hello_world.elf \
+-sds-pf ../_platform_init/sd_blk/export/sd_blk -sds-sys-config linux -target-os linux
 ```
 
 - Copy prebuilt data
