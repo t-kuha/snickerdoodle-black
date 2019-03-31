@@ -1,4 +1,3 @@
-
 ################################################################
 # This is a generated script based on design: sd_blk
 #
@@ -39,11 +38,11 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
-# <./myproj/project_1.xpr> in the current working folder.
+# <./_vivado/sd_blk.xpr> in the current working folder.
 
 set list_projs [get_projects -quiet]
 if { $list_projs eq "" } {
-   create_project project_1 myproj -part xc7z020clg400-3
+   create_project sd_blk _vivado -part xc7z020clg400-3
    set_property BOARD_PART krtkl.com:snickerdoodle_black:part0:1.0 [current_project]
 }
 
