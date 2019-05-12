@@ -54,7 +54,7 @@ $ petalinux-package -p ${PRJ_NAME} --boot --format BIN \
 > --u-boot ${PRJ_NAME}/images/linux/u-boot.elf \
 > --fpga ${PRJ_NAME}/project-spec/hw-description/sd_blk_wrapper.bit
 # or ...
-# > --fpga _vivado/sd_blkruns/impl_1/sd_blk_wrapper.bit
+# > --fpga _vivado/sd_blk.runs/impl_1/sd_blk_wrapper.bit
 # BOOT.BIN is in ${PRJ_NAME}/images/linux/
 ```
 
