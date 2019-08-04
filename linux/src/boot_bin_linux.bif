@@ -2,6 +2,6 @@
 the_ROM_image:
 {
   [bootloader]prj/images/linux/zynq_fsbl.elf
-  _vivado/hw.runs/impl_1/hw_wrapper.bit
+  _vivado/sd_blk.runs/impl_1/sd_blk_wrapper.bit
   prj/images/linux/u-boot.elf
 }
