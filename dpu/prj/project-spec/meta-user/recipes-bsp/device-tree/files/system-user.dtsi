@@ -1,0 +1,15 @@
+/include/ "system-conf.dtsi"
+/ {
+	amba {
+		dpu {
+			compatible = "xilinx,dpu";
+			base-addr = <0x40000000>;
+			dpucore {
+				compatible = "xilinx,dpucore";
+				interrupt-parent = <&intc>;
+				interrupts = <0x0 29 0x4>;
+				core-num = <0x1>;
+			};
+		};
+	};
+};
