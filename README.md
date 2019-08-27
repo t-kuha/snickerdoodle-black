@@ -4,12 +4,8 @@
 
 ***
 
-## linux
+- __dpu:__ DPU integration
 
-- Linux
+- __linux:__ Linux
 
-***
-
-## simple
-
-- Simple SDSoC platform; no I/O
+- __simple:__ Simple SDSoC platform; no I/O
