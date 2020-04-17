@@ -19,7 +19,6 @@ update_ip_catalog
 update_ip_catalog -rebuild
 
 # Create block design
-#source src/u96_dpu_bd.tcl
 source src/bd.tcl
 
 # Set top-level source
@@ -45,7 +44,7 @@ wait_on_run impl_1
 
 # Report utilization & clock after implementation
 open_run impl_1
-report_utilization -name utilization_1
+report_utilization
 report_clocks
 
 # Export .hdf file
