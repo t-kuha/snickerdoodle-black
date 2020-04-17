@@ -200,14 +200,19 @@ proc create_root_design { parentCell } {
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
   set_property -dict [ list \
+   CONFIG.CLKOUT1_JITTER {126.455} \
+   CONFIG.CLKOUT1_PHASE_ERROR {114.212} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {200.000} \
    CONFIG.CLKOUT1_USED {true} \
-   CONFIG.CLKOUT2_JITTER {114.829} \
-   CONFIG.CLKOUT2_PHASE_ERROR {98.575} \
-   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {200.000} \
+   CONFIG.CLKOUT2_JITTER {111.164} \
+   CONFIG.CLKOUT2_PHASE_ERROR {114.212} \
+   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {400.000} \
    CONFIG.CLKOUT2_USED {true} \
    CONFIG.CLK_OUT1_PORT {clk_dpu} \
    CONFIG.CLK_OUT2_PORT {clk_dsp} \
-   CONFIG.MMCM_CLKOUT1_DIVIDE {5} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {8.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {4.000} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {2} \
    CONFIG.MMCM_DIVCLK_DIVIDE {1} \
    CONFIG.NUM_OUT_CLKS {2} \
    CONFIG.RESET_PORT {resetn} \
@@ -233,11 +238,11 @@ proc create_root_design { parentCell } {
    CONFIG.DWCV_PARALLEL {2} \
    CONFIG.SUM_BRAM_N {123.0} \
    CONFIG.SUM_DSP_NUM {164} \
-   CONFIG.TIME_DAY {27} \
-   CONFIG.TIME_HOUR {10} \
-   CONFIG.TIME_MONTH {8} \
+   CONFIG.TIME_DAY {17} \
+   CONFIG.TIME_HOUR {18} \
+   CONFIG.TIME_MONTH {4} \
    CONFIG.TIME_QUARTER {3} \
-   CONFIG.TIME_YEAR {19} \
+   CONFIG.TIME_YEAR {20} \
  ] $dpu_eu_0
 
   # Create instance: processing_system7_0, and set properties
