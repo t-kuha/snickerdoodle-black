@@ -11,7 +11,7 @@
 #include "opencv2/imgcodecs/imgcodecs.hpp"
 
 
-int main()
+int main(int argc, char* argv[])
 {
 	std::cout << "------ DPU (mnist) ------" << std::endl;
 
