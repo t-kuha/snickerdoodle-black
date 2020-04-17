@@ -1,8 +1,14 @@
-**.jou
-**.log
-**.Xil
-**vivado
+*.Xil
+*.
+*.log
+*.jou
+psu_*
 
-**.lnk
+sd_card
 
 _*
+
+*.lnk
+
+*.zip
+*.tar.*
