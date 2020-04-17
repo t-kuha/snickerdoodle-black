@@ -9,14 +9,14 @@ set PREBUILT_DATA_DIR   ${SRC_DIR}/prebuilt
 set HAS_PREBUILT [file exists ${PREBUILT_DATA_DIR}]
 
 if { ${HAS_PREBUILT} } then {
-    set OUTDIR  _platform_final
+    set OUTDIR  _pfm
 } else {
-    set OUTDIR  _platform_init
+    set OUTDIR  _pfm_0
 }
 
 
 # Create platform
-platform create -name ${PFM_NAME} -hw "petalinux/${PFM_NAME}.dsa" -out ${OUTDIR}
+platform create -name ${PFM_NAME} -hw ${PFM_NAME}.dsa -out ${OUTDIR}
 # {platform}
 
 
