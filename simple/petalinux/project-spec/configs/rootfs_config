@@ -410,7 +410,7 @@ CONFIG_mtd-utils=y
 #
 # canutils 
 #
-CONFIG_canutils=y
+# CONFIG_canutils is not set
 # CONFIG_canutils-dbg is not set
 # CONFIG_canutils-dev is not set
 
@@ -704,7 +704,7 @@ CONFIG_openssh-sftp-server=y
 #
 # pciutils 
 #
-CONFIG_pciutils=y
+# CONFIG_pciutils is not set
 # CONFIG_pciutils-ids is not set
 # CONFIG_pciutils-dev is not set
 # CONFIG_libpci is not set
@@ -1191,7 +1191,7 @@ CONFIG_run-postinsts=y
 #
 # bluez5 
 #
-CONFIG_bluez5=y
+# CONFIG_bluez5 is not set
 # CONFIG_bluez5-testtools is not set
 # CONFIG_bluez5-dbg is not set
 # CONFIG_bluez5-obex is not set
@@ -3592,7 +3592,7 @@ CONFIG_bridge-utils=y
 #
 # wpa-supplicant 
 #
-CONFIG_wpa-supplicant=y
+# CONFIG_wpa-supplicant is not set
 # CONFIG_wpa-supplicant-passphrase is not set
 # CONFIG_wpa-supplicant-cli is not set
 # CONFIG_wpa-supplicant-dev is not set
