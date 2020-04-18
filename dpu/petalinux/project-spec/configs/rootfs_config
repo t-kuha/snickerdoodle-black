@@ -4138,6 +4138,7 @@ CONFIG_dpu=y
 #
 # user packages 
 #
+CONFIG_fuse-exfat=y
 
 #
 # PetaLinux RootFS Settings
