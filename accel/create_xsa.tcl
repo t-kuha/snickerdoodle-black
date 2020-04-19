@@ -13,7 +13,7 @@ set_property board_part krtkl.com:snickerdoodle_black:part0:1.0 [current_project
 # Create block design
 source ${SRC_DIR}/bd.tcl
 
-set_property platform.name "u96v2_accel" [current_project]
+set_property platform.name "sd_blk_accel" [current_project]
 set_property platform.design_intent.embedded "true" [current_project]
 set_property platform.design_intent.server_managed "false" [current_project]
 set_property platform.design_intent.external_host "false" [current_project]
