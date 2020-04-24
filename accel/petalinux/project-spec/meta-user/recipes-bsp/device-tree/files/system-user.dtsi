@@ -2,9 +2,38 @@
 / {
 };
 
+#include <dt-bindings/interrupt-controller/irq.h>
+
 &amba {
     zyxclmm_drm {
         compatible = "xlnx,zocl";
         status = "okay";
     };
+
+	/* Wi-Fi */
+	wlan_en_reg: fixed-regulator-wlen {
+		compatible = "regulator-fixed";
+		regulator-name = "wlan-en-regulator";
+		regulator-min-microvolt = <1800000>;
+		regulator-max-microvolt = <1800000>;
+		gpio = <&gpio0 9 4>;
+		startup-delay-us = <70000>;
+		enable-active-high;
+	};
+};
+
+&sdhci1 {
+	vmmc-supply = <&wlan_en_reg>;
+	bus-width = <4>;
+	cap-power-off-card;
+	keep-power-in-suspend;
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	wlcore: wlcore@2 {
+		compatible = "ti,wl1837";
+		reg = <2>;
+		interrupt-parent = <&gpio0>;
+		interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
+	};
 };
