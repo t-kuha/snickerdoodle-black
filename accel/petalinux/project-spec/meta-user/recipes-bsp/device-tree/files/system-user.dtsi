@@ -1,14 +1,28 @@
+#include <dt-bindings/interrupt-controller/irq.h>
+
 /include/ "system-conf.dtsi"
 / {
 };
 
-#include <dt-bindings/interrupt-controller/irq.h>
+&usb0 {
+	status = "okay";
+	dr_mode = "host";
+	usb-phy = <&usb_phy0>;
+};
 
 &amba {
     zyxclmm_drm {
         compatible = "xlnx,zocl";
         status = "okay";
     };
+
+	usb_phy0: usb-phy0 {
+		compatible = "usb-nop-xceiv";
+		#phy-cells = <0>;
+		reset-gpios = <&gpio0 16 1>;
+		view-port = <0x170>;
+		drv-vbus;
+	};
 
 	/* Wi-Fi */
 	wlan_en_reg: fixed-regulator-wlen {
@@ -35,5 +49,16 @@
 		reg = <2>;
 		interrupt-parent = <&gpio0>;
 		interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
+	};
+};
+
+&i2c1{
+	/* USB Hub */
+	status = "okay";
+	clock-frequency = <100000>;
+	
+	usb2514b@2c {
+		compatible = "microchip,usb2514b";
+		reg = <0x2c>;
 	};
 };
