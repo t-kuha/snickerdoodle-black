@@ -6,6 +6,9 @@ set SRC_DIR     src
 set NUM_JOBS    4
 
 
+# Remove existing directory
+file delete -force ${PRJ_DIR}
+
 # Create project
 create_project ${PRJ_NAME} ${PRJ_DIR} -part xc7z020clg400-3
 set_property board_part krtkl.com:snickerdoodle_black:part0:1.0 [current_project]
