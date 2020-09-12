@@ -1,6 +1,5 @@
-# linux
+# Large linux rootfs with various libraries
 
-- Large linux rootfs with various libraries
   - Not RAM disk image
   - SDSoC capable
 
