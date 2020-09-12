@@ -4,6 +4,8 @@ set PRJ_NAME    sd_blk
 set BD_NAME     ${PRJ_NAME}
 set SRC_DIR     src
 
+# Remove existing directory
+file delete -force ${PRJ_DIR}
 
 # Create project
 create_project ${PRJ_NAME} ${PRJ_DIR} -part xc7z020clg400-3
@@ -25,7 +27,7 @@ save_bd_design
 generate_target all [get_files  ${PRJ_DIR}/${PRJ_NAME}.srcs/sources_1/bd/${BD_NAME}/${BD_NAME}.bd]
 
 # Create .dsa
-write_dsa ${PRJ_NAME}.dsa
+write_dsa -force ${PRJ_NAME}.dsa
 validate_dsa ${PRJ_NAME}.dsa
 
 # Finish - close project
