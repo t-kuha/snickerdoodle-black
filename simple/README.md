@@ -17,15 +17,13 @@ $ vivado -mode batch -source create_vivado_project.tcl
 $ export PRJ=petalinux
 
 $ petalinux-create -t project -n ${PRJ} --template zynq
+$ petalinux-config --project ${PRJ} --get-hw-description=.
 $ petalinux-build -p ${PRJ}
 ```
 
 ### Generate platform (w/o prebuilt data)
 
 ```shell-session
-# Copy necessary output products
-$ ./copy_pfm_files.sh
-
 # Make sure to use xsct in SDx (not SDK)
 $ ${XILINX_SDX}/bin/xsct create_sdsoc_pfm.tcl
 ```
@@ -41,12 +39,7 @@ $ sdscc ../src/hello_world.c -c -o hello_world.o \
 -sds-pf ../_pfm_0/sd_blk/export/sd_blk -sds-sys-config linux -target-os linux
 $ sdscc hello_world.o -o hello_world.elf \
 -sds-pf ../_pfm_0/sd_blk/export/sd_blk -sds-sys-config linux -target-os linux
-```
-
-- Copy prebuilt data
-
-```shell-session
-$ ./copy_prebuilt_files.sh
+$ cd ..
 ```
 
 ### Create final platform (with pre-built HW)
