@@ -1,8 +1,48 @@
 /include/ "system-conf.dtsi"
+
+#include <dt-bindings/gpio/gpio.h>
+
 / {
     model = "snickerdoodle black";
 
     xlnk {
         compatible = "xlnx,xlnk-1.0";
     };
+
+    power_en_reg: fixed-regulator-powen {
+        compatible = "regulator-fixed";
+        regulator-name = "power-en-regulator";
+        gpio = <&gpio0 20 0>;
+        regulator-min-microvolt = <1800000>;
+        regulator-max-microvolt = <1800000>;
+        regulator-always-on;
+        enable-active-high;
+    };
+        
+    usb_phy0: phy0 {
+        compatible = "usb-nop-xceiv";
+        /*compatible = "ulpi-phy";*/
+        #phy-cells = <0>;
+        view-port = <0x170>;
+        drv-vbus;
+    };
+};
+
+&i2c1 {
+    status = "okay";
+    clock-frequency = <100000>;
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    usb2514b@2c {
+        compatible = "microchip,usb2514b";
+        reg = <0x2c>;
+        reset-gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
+    };
+};
+
+&usb0 {
+    status = "okay";
+    dr_mode = "host";
+    usb-phy = <&usb_phy0>;
 };
