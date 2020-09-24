@@ -1,8 +1,5 @@
 # Large linux rootfs with various libraries
 
-  - Not RAM disk image
-  - SDSoC capable
-
 ***
 
 ## Build hardware
@@ -21,24 +18,24 @@ $ vivado -mode batch -source create_vivado_project.tcl
 - Create project (usually can be skipped to "petalinux-build")
 
 ```shell-session
-$ export PRJ_NAME=prj
-$ petalinux-create -t project -n ${PRJ_NAME} --template zynq
-$ petalinux-config -p ${PRJ_NAME} --get-hw-description=.
+$ export PRJ=petalinux
+$ petalinux-create -t project -n ${PRJ} --template zynq
+$ petalinux-config -p ${PRJ} --get-hw-description=.
 
 # Kernel config
-$ petalinux-config -p ${PRJ_NAME} -c kernel
+$ petalinux-config -p ${PRJ} -c kernel
 
 # u-boot config
-$ petalinux-config -p ${PRJ_NAME} -c u-boot
+$ petalinux-config -p ${PRJ} -c u-boot
 
 # rootfs config
-$ petalinux-config -p ${PRJ_NAME} -c rootfs
+$ petalinux-config -p ${PRJ} -c rootfs
 
 # Build
-$ petalinux-build -p ${PRJ_NAME}
+$ petalinux-build -p ${PRJ}
 
 # Generate SDK (optional)
-$ petalinux-build --sdk -p ${PRJ_NAME}
+$ petalinux-build --sdk -p ${PRJ}
 ```
 
 ***
@@ -48,24 +45,14 @@ $ petalinux-build --sdk -p ${PRJ_NAME}
 ```shell-session
 $ bootgen -arch zynq -image src/boot_bin_linux.bif -w -o BOOT.bin
 # or ...
-$ petalinux-package -p ${PRJ_NAME} --boot --format BIN \
-> --fsbl ${PRJ_NAME}/images/linux/zynq_fsbl.elf \
-> --u-boot ${PRJ_NAME}/images/linux/u-boot.elf \
-> --fpga ${PRJ_NAME}/project-spec/hw-description/sd_blk_wrapper.bit
+$ petalinux-package -p ${PRJ} --boot --format BIN \
+--fsbl ${PRJ}/images/linux/zynq_fsbl.elf \
+--u-boot ${PRJ}/images/linux/u-boot.elf \
+--fpga ${PRJ}/project-spec/hw-description/sd_blk_wrapper.bit
 # or ...
-# > --fpga _vivado/sd_blk.runs/impl_1/sd_blk_wrapper.bit
-# BOOT.BIN is in ${PRJ_NAME}/images/linux/
+# --fpga _vivado/sd_blk.runs/impl_1/sd_blk_wrapper.bit
+# BOOT.BIN is in ${PRJ}/images/linux/
 ```
-
-***
-
-## Run
-
-- Copy BOOT.bin & image.ub into 1st partition of SD card
-
-- Untar rootfs.tar.bz2 (or rootfs.tar.gz) into 2nd partition of SD card
-
-- Power-up the board
 
 ***
 
@@ -73,25 +60,9 @@ $ petalinux-package -p ${PRJ_NAME} --boot --format BIN \
 
 ```shell-session
 # Collect prebuilt image
-$ cd ${PRJ_NAME}
+$ cd ${PRJ}
 $ petalinux-package --prebuilt
 
 # Run Linux Kernel on QEMU
 $ petalinux-boot --qemu --kernel
 ```
-
-***
-
-## Tips
-
-- How to add libsdslib*.so
-
-    ```shell-session
-    $ petalinux-create -p ${PRJ_NAME} -t apps --template install --name sdslib --enable
-    $ rm ${PRJ_NAME}/project-spec/meta-user/recipes-apps/sdslib/files/sdslib
-    $ cp -R ${XILINX_SDX}/target/aarch32-linux/lib/libsds_lib*.so \
-    ${PRJ_NAME}/project-spec/meta-user/recipes-apps/sdslib/files
-
-    # Edit .bb file
-    $ nano ${PRJ_NAME}/project-spec/meta-user/recipes-apps/sdslib/sdslib.bb
-    ```
