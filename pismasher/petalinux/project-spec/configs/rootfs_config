@@ -1191,7 +1191,7 @@ CONFIG_run-postinsts=y
 #
 # bluez5 
 #
-CONFIG_bluez5=y
+# CONFIG_bluez5 is not set
 # CONFIG_bluez5-testtools is not set
 # CONFIG_bluez5-dbg is not set
 # CONFIG_bluez5-obex is not set
@@ -2300,7 +2300,7 @@ CONFIG_udev-extraconf=y
 #
 # gcc-runtime 
 #
-CONFIG_libstdcPLUSPLUS=y
+# CONFIG_libstdcPLUSPLUS is not set
 # CONFIG_libstdcPLUSPLUS-dev is not set
 
 #
@@ -3592,7 +3592,7 @@ CONFIG_bridge-utils=y
 #
 # wpa-supplicant 
 #
-CONFIG_wpa-supplicant=y
+# CONFIG_wpa-supplicant is not set
 # CONFIG_wpa-supplicant-passphrase is not set
 # CONFIG_wpa-supplicant-cli is not set
 # CONFIG_wpa-supplicant-dev is not set
@@ -4128,12 +4128,10 @@ CONFIG_imagefeature-hwcodecs=y
 #
 # CONFIG_gpio-demo is not set
 # CONFIG_peekpoke is not set
-CONFIG_sdslib=y
 
 #
 # user packages 
 #
-CONFIG_fuse-exfat=y
 
 #
 # PetaLinux RootFS Settings
