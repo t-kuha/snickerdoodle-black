@@ -80,3 +80,24 @@
     dr_mode = "host";
     usb-phy = <&usb_phy0>;
 };
+
+&spi1 {
+    status = "okay";
+
+    dev@0 {
+        compatible = "linux,spidev";
+        reg = <0>;
+        spi-max-frequency = <1000000>;
+    };
+};
+
+&qspi {
+    status = "okay";
+    /*xlnx,qspi-mode = <0>;*/   /* Currenlty unused. */
+
+    flash@0 {
+        /* n25q128a: 16MiB */
+        compatible = "n25q128a11", "jedec,spi-nor";
+        m25p,fast-read;
+    };
+};
