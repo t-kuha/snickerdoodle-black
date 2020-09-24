@@ -2,6 +2,7 @@
 *.
 *.log
 *.jou
+*.elf
 psu_*
 
 sd_card
@@ -14,3 +15,5 @@ _*
 *.tar.*
 
 */petalinux/project-spec/meta-user/recipes-connectivity/
+*/petalinux/project-spec/meta-user/recipes-apps/dnndk/files/
+*/petalinux/project-spec/meta-user/recipes-modules/dpu/files/
