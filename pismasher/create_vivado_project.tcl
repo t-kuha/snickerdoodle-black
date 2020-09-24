@@ -13,13 +13,8 @@ create_project ${PRJ_NAME} ${PRJ_DIR} -part xc7z020clg400-3
 set_property board_part krtkl.com:snickerdoodle_black:part0:1.0 [current_project]
 
 # Add constraint file
-# add_files -fileset constrs_1 -norecurse ${SRC_DIR}/Zybo-Z7-Master.xdc
-# import_files -fileset constrs_1 ${SRC_DIR}/Zybo-Z7-Master.xdc
-
-# Set IP repository paths
-#set IP_REPOS { "src/ip" "vivado-library" } 
-#set_property  ip_repo_paths  ${IP_REPOS}  [current_project]
-#update_ip_catalog
+# add_files -fileset constrs_1 -norecurse ${SRC_DIR}/constraints.xdc
+# import_files -fileset constrs_1 ${SRC_DIR}/constraints.xdc
 
 # Refresh IP Repositories
 update_ip_catalog -rebuild
@@ -28,16 +23,16 @@ update_ip_catalog -rebuild
 source ${SRC_DIR}/bd.tcl
 
 # Set top-level source
-make_wrapper -files [get_files ${PRJ_DIR}/${PRJ_NAME}.srcs/sources_1/bd/${PRJ_NAME}/${BD_NAME}.bd] -top
-add_files -norecurse ${PRJ_DIR}/${PRJ_NAME}.srcs/sources_1/bd/${PRJ_NAME}/hdl/${BD_NAME}_wrapper.v
+make_wrapper -files [get_files ${PRJ_DIR}/${PRJ_NAME}.srcs/sources_1/bd/${BD_NAME}/${BD_NAME}.bd] -top
+add_files -norecurse ${PRJ_DIR}/${PRJ_NAME}.srcs/sources_1/bd/${BD_NAME}/hdl/${BD_NAME}_wrapper.v
 set_property top ${BD_NAME}_wrapper [current_fileset]
 update_compile_order -fileset sources_1
 
 # Generate block design
 regenerate_bd_layout
-validate_bd_design
+# validate_bd_design
 save_bd_design
-generate_target all [get_files  ${PRJ_DIR}/${PRJ_NAME}.srcs/sources_1/bd/${PRJ_NAME}/${PRJ_NAME}.bd]
+generate_target all [get_files  ${PRJ_DIR}/${PRJ_NAME}.srcs/sources_1/bd/${BD_NAME}/${BD_NAME}.bd]
 
 # Generate bitstream
 update_compile_order -fileset sources_1
@@ -54,7 +49,7 @@ report_utilization -name utilization_1
 report_clocks
 
 # Export .hdf file - including bitstream
-file copy -force ${PRJ_DIR}/${PRJ_NAME}.runs/impl_1/${PRJ_NAME}_wrapper.sysdef _system.hdf
+file copy -force ${PRJ_DIR}/${PRJ_NAME}.runs/impl_1/${BD_NAME}_wrapper.sysdef _system.hdf
 # Without bitstream
 # write_hwdef -force -file _system.hdf
 
