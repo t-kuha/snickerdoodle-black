@@ -12,3 +12,5 @@ _*
 
 *.zip
 *.tar.*
+
+*/petalinux/project-spec/meta-user/recipes-connectivity/
