@@ -2268,7 +2268,7 @@ CONFIG_udev-extraconf=y
 #
 # gcc-runtime 
 #
-# CONFIG_libstdcPLUSPLUS is not set
+CONFIG_libstdcPLUSPLUS=y
 # CONFIG_libstdcPLUSPLUS-dev is not set
 
 #
@@ -3946,6 +3946,11 @@ CONFIG_imagefeature-hwcodecs=y
 #
 # user packages 
 #
+CONFIG_opencl-clhpp-dev=y
+CONFIG_opencl-headers-dev=y
+CONFIG_xrt=y
+CONFIG_xrt-dev=y
+CONFIG_zocl=y
 
 #
 # PetaLinux RootFS Settings
