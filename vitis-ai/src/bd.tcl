@@ -201,33 +201,43 @@ proc create_root_design { parentCell } {
   # Create instance: clk_wiz, and set properties
   set clk_wiz [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz ]
   set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {126.455} \
-   CONFIG.CLKOUT1_PHASE_ERROR {114.212} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {200.000} \
-   CONFIG.CLKOUT2_JITTER {111.164} \
-   CONFIG.CLKOUT2_PHASE_ERROR {114.212} \
-   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {400.000} \
+   CONFIG.CLKOUT1_DRIVES {BUFG} \
+   CONFIG.CLKOUT1_JITTER {127.220} \
+   CONFIG.CLKOUT1_PHASE_ERROR {105.461} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {150.000} \
+   CONFIG.CLKOUT2_DRIVES {BUFG} \
+   CONFIG.CLKOUT2_JITTER {111.879} \
+   CONFIG.CLKOUT2_PHASE_ERROR {105.461} \
+   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {300.000} \
    CONFIG.CLKOUT2_USED {true} \
+   CONFIG.CLKOUT3_DRIVES {BUFG} \
    CONFIG.CLKOUT3_JITTER {129.923} \
    CONFIG.CLKOUT3_PHASE_ERROR {154.678} \
-   CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {150.000} \
+   CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {100.000} \
    CONFIG.CLKOUT3_USED {false} \
+   CONFIG.CLKOUT4_DRIVES {BUFG} \
    CONFIG.CLKOUT4_JITTER {124.134} \
    CONFIG.CLKOUT4_PHASE_ERROR {154.678} \
-   CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {200.000} \
+   CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {100.000} \
    CONFIG.CLKOUT4_USED {false} \
+   CONFIG.CLKOUT5_DRIVES {BUFG} \
+   CONFIG.CLKOUT6_DRIVES {BUFG} \
+   CONFIG.CLKOUT7_DRIVES {BUFG} \
    CONFIG.CLK_OUT1_PORT {clk_out0} \
    CONFIG.CLK_OUT2_PORT {clk_out1} \
-   CONFIG.CLK_OUT3_PORT {clk_out2} \
-   CONFIG.CLK_OUT4_PORT {clk_out3} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {8.000} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {4.000} \
-   CONFIG.MMCM_CLKOUT1_DIVIDE {2} \
+   CONFIG.CLK_OUT3_PORT {clk_out3} \
+   CONFIG.CLK_OUT4_PORT {clk_out4} \
+   CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {9.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {6.000} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {3} \
    CONFIG.MMCM_CLKOUT2_DIVIDE {1} \
    CONFIG.MMCM_CLKOUT3_DIVIDE {1} \
    CONFIG.NUM_OUT_CLKS {2} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
+   CONFIG.SECONDARY_SOURCE {Single_ended_clock_capable_pin} \
+   CONFIG.USE_PHASE_ALIGNMENT {false} \
  ] $clk_wiz
 
   # Create instance: ps7, and set properties
@@ -714,7 +724,7 @@ proc create_root_design { parentCell } {
   # Create PFM attributes
   set_property PFM_NAME {krtkl.com:sd_blk:sd_blk_vai:2019.2} [get_files [current_bd_design].bd]
   set_property PFM.CLOCK {clk_out0 {id "0" is_default "true" proc_sys_reset "/ps_rst_0" status "fixed"} clk_out1 {id "1" is_default "false" proc_sys_reset "/ps_rst_1" status "fixed"}} [get_bd_cells /clk_wiz]
-  set_property PFM.AXI_PORT {M_AXI_GP0 {memport "M_AXI_GP" sptag "" memory ""} M_AXI_GP1 {memport "M_AXI_GP" sptag "" memory ""} S_AXI_ACP {memport "S_AXI_ACP" sptag "" memory ""} S_AXI_HP0 {memport "S_AXI_HP" sptag "" memory ""} S_AXI_HP1 {memport "S_AXI_HP" sptag "" memory ""} S_AXI_HP2 {memport "S_AXI_HP" sptag "" memory ""} S_AXI_HP3 {memport "S_AXI_HP" sptag "" memory ""}} [get_bd_cells /ps7]
+  set_property PFM.AXI_PORT {M_AXI_GP0 {memport "M_AXI_GP" sptag "GP0" memory ""} M_AXI_GP1 {memport "M_AXI_GP" sptag "GP1" memory ""} S_AXI_ACP {memport "S_AXI_ACP" sptag "ACP" memory ""} S_AXI_HP0 {memport "S_AXI_HP" sptag "HP0" memory ""} S_AXI_HP1 {memport "S_AXI_HP" sptag "HP1" memory ""} S_AXI_HP2 {memport "S_AXI_HP" sptag "HP2" memory ""} S_AXI_HP3 {memport "S_AXI_HP" sptag "HP3" memory ""}} [get_bd_cells /ps7]
   set_property PFM.IRQ {In0 {} In1 {} In2 {} In3 {} In4 {} In5 {} In6 {} In7 {} In8 {} In9 {} In10 {} In11 {} In12 {} In13 {} In14 {} In15 {}} [get_bd_cells /xlconcat_0]
 
 
