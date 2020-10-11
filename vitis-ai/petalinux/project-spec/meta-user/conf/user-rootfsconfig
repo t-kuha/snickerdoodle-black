@@ -10,3 +10,11 @@ CONFIG_zocl
 CONFIG_opencl-clhpp-dev
 CONFIG_opencl-headers-dev
 CONFIG_vitis-env
+
+# For Vitis AI runtime
+CONFIG_glog
+CONFIG_gflags
+CONFIG_libunwind
+
+# DNNDK
+CONFIG_dnndk
