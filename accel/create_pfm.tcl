@@ -4,15 +4,15 @@
 
 set PFM_NAME    sd_blk_accel
 set OUT_DIR     _pfm
-set IMG_DIR	_image
+set IMG_DIR     _image
 
 # Remove existing directories
 file delete -force ${OUT_DIR}
 file delete -force ${IMG_DIR}
 
-# Copy image.ub into _image
+# Copy image.ub & boot.scr into _image
 file mkdir ${IMG_DIR}
-
+file copy petalinux/images/linux/boot.scr ${IMG_DIR}
 file copy petalinux/images/linux/image.ub ${IMG_DIR}
 
 platform create -name ${PFM_NAME} -hw ${PFM_NAME}.xsa -no-boot-bsp -out ${OUT_DIR}
