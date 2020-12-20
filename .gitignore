@@ -13,3 +13,4 @@ _*
 .vscode
 
 */petalinux/project-spec/meta-user/recipes-connectivity/
+*/petalinux/project-spec/meta-user/recipes-ml/
