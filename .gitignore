@@ -1,8 +1,6 @@
 *.Xil
-*.
 *.log
 *.jou
-psu_*
 
 sd_card
 
@@ -13,3 +11,5 @@ _*
 *.zip
 *.tar.*
 .vscode
+
+*/petalinux/project-spec/meta-user/recipes-connectivity/
