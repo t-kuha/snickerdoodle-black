@@ -16,6 +16,13 @@
 	};
 };
 
+&amba {
+    zyxclmm_drm {
+        compatible = "xlnx,zocl";
+        status = "okay";
+    };
+};
+
 &sdhci1 {
 	/* Wi-Fi */
 	vmmc-supply = <&wlan_en_reg>;
