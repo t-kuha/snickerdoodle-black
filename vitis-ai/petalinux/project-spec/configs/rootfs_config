@@ -3941,7 +3941,7 @@ CONFIG_wpa-supplicant=y
 #
 # packagegroup-petalinux-opencv 
 #
-# CONFIG_packagegroup-petalinux-opencv is not set
+CONFIG_packagegroup-petalinux-opencv=y
 # CONFIG_packagegroup-petalinux-opencv-dbg is not set
 # CONFIG_packagegroup-petalinux-opencv-dev is not set
 
@@ -4032,6 +4032,11 @@ CONFIG_vitis-env=y
 CONFIG_dnndk=y
 CONFIG_opencl-clhpp-dev=y
 CONFIG_opencl-headers-dev=y
+CONFIG_target-factory=y
+CONFIG_unilog=y
+CONFIG_vart=y
+# CONFIG_vitis-ai-library is not set
+CONFIG_xir=y
 
 #
 # PetaLinux RootFS Settings
