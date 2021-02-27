@@ -3,4 +3,4 @@ VALIDATE_HW_CHKSUM=1
 HARDWARE_PATH=/home/imagingtechnerd/disk/2020.2/snickerdoodle-black/accel/sd_blk_accel.xsa
 HARDWARE_CHECKSUM=a0a0e836e58bed2b792febb85f760fd7
 YOCTO_SDK=5ff8fc5f85d1566b314bb73eaa378212
-RFSCONFIG_CHKSUM=7fb2a289957dc67ab720c7cb67e09ee0
+RFSCONFIG_CHKSUM=6150a1ecfdade384f5cce81e74dd61ae
