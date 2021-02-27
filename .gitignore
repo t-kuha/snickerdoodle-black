@@ -1,6 +1,7 @@
 *.Xil
 *.log
 *.jou
+*.xsa
 
 sd_card
 
