@@ -16,7 +16,6 @@ $ vivado -mode batch -source create_vivado_project.tcl
 ```shell-session
 $ export PRJ=petalinux
 
-$ petalinux-create -t project -n ${PRJ} --template zynq
 $ petalinux-config --project ${PRJ} --get-hw-description=.
 $ petalinux-build -p ${PRJ}
 ```
@@ -33,8 +32,7 @@ $ ${XILINX_SDX}/bin/xsct create_sdsoc_pfm.tcl
 - Build _hello_world_
 
 ```shell-session
-$ mkdir _prj_0
-$ cd _prj_0
+$ mkdir _prj_0 && cd _prj_0
 $ sdscc ../src/hello_world.c -c -o hello_world.o \
 -sds-pf ../_pfm_0/sd_blk/export/sd_blk -sds-sys-config linux -target-os linux
 $ sdscc hello_world.o -o hello_world.elf \
@@ -113,7 +111,7 @@ Test passed.
 
 ***
 
-### How to create Petalinux project
+### How to create Petalinux project from scratch
 
 ```shell-session
 $ export PRJ=petalinux
@@ -144,7 +142,7 @@ $ petalinux-build --project ${PRJ}
 
 ***
 
-## Reference
+## References
 
 - UG1146: "SDSoC Environment Platform Development Guide"
 - UG1144: "PetaLinux Tools Documentation"
