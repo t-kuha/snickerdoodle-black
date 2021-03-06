@@ -1,5 +1,7 @@
 # Direct-IO SDSoC platform for Snickerdoodle Black
 
+- Based on [Using External I/O](https://www.xilinx.com/html_docs/xilinx2018_3/sdsoc_doc/using-external-i-o-cns1504034391929.html)
+
 ***
 
 ## How to create platform
