@@ -28,15 +28,16 @@ update_compile_order -fileset sources_1
 # Generate block design
 regenerate_bd_layout
 save_bd_design
-generate_target all [get_files ${PRJ_DIR}/${PRJ_NAME}.srcs/sources_1/bd/${BD_NAME}/${BD_NAME}.bd]
+generate_target all [get_files [current_bd_design].bd]
 
 # Export .xsa file
-set_property platform.name "sd_blk_accel" [current_project]
-set_property platform.design_intent.embedded "true" [current_project]
-set_property platform.design_intent.server_managed "false" [current_project]
-set_property platform.design_intent.external_host "false" [current_project]
-set_property platform.design_intent.datacenter "false" [current_project]
-set_property platform.default_output_type "sd_card" [current_project]
+# set_property platform.name {sd_blk_accel} [current_project]
+set_property platform.design_intent.embedded {true} [current_project]
+set_property platform.design_intent.server_managed {false} [current_project]
+set_property platform.design_intent.external_host {false} [current_project]
+set_property platform.design_intent.datacenter {false} [current_project]
+set_property platform.default_output_type {sd_card} [current_project]
+set_property platform.uses_pr {false} [current_project]
 write_hw_platform -force -file ${PRJ_NAME}.xsa
 validate_hw_platform ${PRJ_NAME}.xsa
 
