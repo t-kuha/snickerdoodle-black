@@ -1206,7 +1206,7 @@ CONFIG_run-postinsts=y
 #
 # bluez5 
 #
-CONFIG_bluez5=y
+# CONFIG_bluez5 is not set
 # CONFIG_bluez5-testtools is not set
 # CONFIG_bluez5-dbg is not set
 # CONFIG_bluez5-obex is not set
