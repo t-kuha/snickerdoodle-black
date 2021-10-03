@@ -3985,6 +3985,11 @@ CONFIG_auto-login=y
 #
 CONFIG_fuse-exfat=y
 CONFIG_opencl-headers-dev=y
+CONFIG_target-factory=y
+CONFIG_unilog=y
+CONFIG_vart=y
+# CONFIG_vitis-ai-library is not set
+CONFIG_xir=y
 
 #
 # PetaLinux RootFS Settings
