@@ -5,7 +5,6 @@ dirs755 += "/media/card"
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 SRC_URI += " \
-	file://wl1271-nvs.bin \
 	file://wl18xx-conf.bin \
 	file://wl18xx-fw-4.bin \
 	"
@@ -13,7 +12,6 @@ SRC_URI += " \
 do_install_append() {
 	# Install wl1831's firmware
 	install -d 0644 ${D}${base_libdir}/firmware/ti-connectivity
-	install -m 0644 wl1271-nvs.bin ${D}${base_libdir}/firmware/ti-connectivity
 	install -m 0644 wl18xx-conf.bin ${D}${base_libdir}/firmware/ti-connectivity
 	install -m 0644 wl18xx-fw-4.bin ${D}${base_libdir}/firmware/ti-connectivity
 
