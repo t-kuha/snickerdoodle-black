@@ -1,7 +1,9 @@
-# snickerdoodle-black
+# snickerdoodle-black (2021.2)
 
-- Checkout branch according to your tool version:
+## Prerequisite
+
+- Install board definition files for Snickerdoodle
 
 ```shell-session
-$ git clone https://github.com/t-kuha/snickerdoodle-black.git -b <tool version>
+$ git clone https://github.com/krtkl/snickerdoodle-board-files.git ${XILINX_VIVADO}/data/xhub/boards/XilinxBoardStore/boards/snickerdoodle-board-files
 ```
