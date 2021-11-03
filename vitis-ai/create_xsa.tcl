@@ -31,7 +31,6 @@ save_bd_design
 generate_target all [get_files [current_bd_design].bd]
 
 # Export .xsa file
-# set_property platform.name {sd_blk_accel} [current_project]
 set_property platform.design_intent.embedded {true} [current_project]
 set_property platform.design_intent.server_managed {false} [current_project]
 set_property platform.design_intent.external_host {false} [current_project]
