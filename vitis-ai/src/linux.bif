@@ -1,7 +1,7 @@
 /* linux */
 the_ROM_image:
 {
-  [bootloader]<sd_blk_accel/boot/zynq_fsbl.elf>
+  [bootloader]<sd_blk_vai/boot/zynq_fsbl.elf>
   <bitstream>
-  <uboot,sd_blk_accel/boot/u-boot-dtb.elf>
+  <uboot,sd_blk_vai/boot/u-boot-dtb.elf>
 }
