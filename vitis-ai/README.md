@@ -32,7 +32,7 @@ $ xsct create_pfm.tcl
 ## Create Vitis-AI platform
 
 ```shell-session
-$ git clone https://github.com/Xilinx/Vitis-AI.git -b v1.4
+$ git clone https://github.com/Xilinx/Vitis-AI.git -b v1.4.1
 $ cp -R Vitis-AI/dsa/DPU-TRD/ . 
 ```
 
