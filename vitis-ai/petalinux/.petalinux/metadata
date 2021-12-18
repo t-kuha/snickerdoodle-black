@@ -1,6 +1,6 @@
 PETALINUX_VER=2021.2
 VALIDATE_HW_CHKSUM=1
-HARDWARE_PATH=/home/imagingtechnerd/work/snickerdoodle-black/vitis-ai/sd_blk.xsa
+HARDWARE_PATH=/home/imagingtechnerd/disk/snickerdoodle-black/vitis-ai/sd_blk.xsa
 HARDWARE_CHECKSUM=3efc4d8f42651a053820f7fc19901508
 YOCTO_SDK=730622968fa68a89dae9b2c19f63722e
-RFSCONFIG_CHKSUM=142995ebc9e48f812cd4b77052e75890
+RFSCONFIG_CHKSUM=c11be576cb4bda6866182040d082334a
