@@ -3978,7 +3978,12 @@ CONFIG_auto-login=y
 #
 # user packages 
 #
+CONFIG_libtorch=y
+CONFIG_arm-computelibrary=y
+CONFIG_armnn=y
+CONFIG_caffe=y
 CONFIG_fuse-exfat=y
+CONFIG_larq-compute-engine=y
 CONFIG_opencl-headers-dev=y
 CONFIG_target-factory=y
 CONFIG_unilog=y

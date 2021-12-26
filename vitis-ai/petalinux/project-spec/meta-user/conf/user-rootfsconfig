@@ -16,3 +16,9 @@ CONFIG_unilog
 CONFIG_vart
 CONFIG_vitis-ai-library
 CONFIG_xir
+
+CONFIG_arm-computelibrary
+CONFIG_armnn
+CONFIG_caffe
+CONFIG_larq-compute-engine
+CONFIG_libtorch
