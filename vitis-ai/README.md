@@ -16,6 +16,9 @@ $ vivado -mode batch -source create_xsa.tcl
 $ export PRJ=petalinux
 $ petalinux-config -p ${PRJ}
 
+# Get ML-related recipe
+# git clone https://github.com/t-kuha/recipes-ml.git ${PRJ}/project-spec/meta-user/recipes-ml
+
 # Start build
 $ petalinux-build -p ${PRJ}
 
