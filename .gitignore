@@ -2,6 +2,7 @@
 *.log
 *.jou
 *.xsa
+*.bit
 
 sd_card
 
