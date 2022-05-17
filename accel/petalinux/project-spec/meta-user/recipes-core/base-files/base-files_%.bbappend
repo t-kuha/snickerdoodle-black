@@ -15,6 +15,7 @@ do_install:append() {
 	install -m 0644 wl18xx-conf.bin ${D}${base_libdir}/firmware/ti-connectivity
 	install -m 0644 wl18xx-fw-4.bin ${D}${base_libdir}/firmware/ti-connectivity
 
-	# Auto-mount boot directory of SD card 
+	# Auto-mount boot directory of SD card
 	sed -i '/mmcblk0p1/s/^#//g' ${D}${sysconfdir}/fstab
+	sed -i 's/\/media\/card/\/run\/media\/mmcblk0p1/g' ${D}${sysconfdir}/fstab
 }
