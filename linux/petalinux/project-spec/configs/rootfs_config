@@ -2223,7 +2223,7 @@ CONFIG_udev-extraconf=y
 #
 # gcc-runtime 
 #
-# CONFIG_libstdcPLUSPLUS is not set
+CONFIG_libstdcPLUSPLUS=y
 # CONFIG_libstdcPLUSPLUS-dev is not set
 
 #
@@ -3329,7 +3329,7 @@ CONFIG_bridge-utils=y
 #
 # wpa-supplicant 
 #
-# CONFIG_wpa-supplicant is not set
+CONFIG_wpa-supplicant=y
 # CONFIG_wpa-supplicant-passphrase is not set
 # CONFIG_wpa-supplicant-cli is not set
 # CONFIG_wpa-supplicant-dev is not set
@@ -3875,7 +3875,9 @@ CONFIG_u-boot-tools=y
 CONFIG_imagefeature-ssh-server-dropbear=y
 # CONFIG_imagefeature-ssh-server-openssh is not set
 CONFIG_imagefeature-hwcodecs=y
-# CONFIG_imagefeature-package-management is not set
+CONFIG_imagefeature-package-management=y
+CONFIG_package-feed-uris=""
+CONFIG_package-feed-archs=""
 # CONFIG_imagefeature-debug-tweaks is not set
 # CONFIG_auto-login is not set
 # CONFIG_Init-manager-systemd is not set
@@ -3890,6 +3892,6 @@ CONFIG_Init-manager-sysvinit=y
 #
 # PetaLinux RootFS Settings
 #
-CONFIG_ADD_EXTRA_USERS="root:root;petalinux::passwd-expire;"
+CONFIG_ADD_EXTRA_USERS="root:root;zynq:zynq;"
 CONFIG_ADD_USERS_TO_GROUPS="petalinux:audio,video;"
 CONFIG_ADD_USERS_TO_SUDOERS="petalinux"
