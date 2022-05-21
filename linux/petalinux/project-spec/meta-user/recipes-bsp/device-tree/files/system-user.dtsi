@@ -3,6 +3,18 @@
 
 /include/ "system-conf.dtsi"
 / {
+    // POWER EN
+    power_en_reg: fixed-regulator-powen {
+        compatible = "regulator-fixed";
+        regulator-name = "power-en-regulator";
+        gpio = <&gpio0 20 GPIO_ACTIVE_HIGH>;
+        regulator-min-microvolt = <1800000>;
+        regulator-max-microvolt = <1800000>;
+        startup-delay-us = <70000>;
+        regulator-always-on;
+        enable-active-high;
+    };
+
     wlan_en_reg: fixedregulator@2 {
         compatible = "regulator-fixed";
         regulator-name = "wlan-en-regulator";
@@ -13,6 +25,14 @@
         // WLAN_EN GPIO for this board
         gpio = <&gpio0 9 GPIO_ACTIVE_HIGH>;
         enable-active-high;
+    };
+
+	// USB
+    usb_phy0: phy0 {
+        compatible = "usb-nop-xceiv";
+        #phy-cells = <0>;
+        view-port = <0x170>;
+        drv-vbus;
     };
 };
 
@@ -33,6 +53,19 @@
     };
 };
 
+&i2c1 {
+    status = "okay";
+    clock-frequency = <100000>;
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    usb2514b@2c {
+        compatible = "microchip,usb2514b";
+        reg = <0x2c>;
+        reset-gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
+    };
+};
+
 &sdhci1 {
     // Wi-Fi
     vmmc-supply = <&wlan_en_reg>;
@@ -48,4 +81,10 @@
         interrupt-parent = <&gpio0>;
         interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
     };
+};
+
+&usb0 {
+    status = "okay";
+    dr_mode = "host";
+    usb-phy = <&usb_phy0>;
 };
