@@ -1,3 +1,14 @@
 /include/ "system-conf.dtsi"
 / {
+    // POWER EN
+    power_en_reg: fixed-regulator-powen {
+        compatible = "regulator-fixed";
+        regulator-name = "power-en-regulator";
+        gpio = <&gpio0 20 GPIO_ACTIVE_HIGH/*4*/>;
+        regulator-min-microvolt = <1800000>;
+        regulator-max-microvolt = <1800000>;
+        startup-delay-us = <70000>;
+        regulator-always-on;
+        enable-active-high;
+    };
 };
