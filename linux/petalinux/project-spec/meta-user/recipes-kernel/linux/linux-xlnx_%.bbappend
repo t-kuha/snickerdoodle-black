@@ -5,5 +5,7 @@ KERNEL_FEATURES:append = " bsp.cfg"
 SRC_URI += "file://user_2022-05-17-14-32-00.cfg \
             file://user_2022-05-18-13-13-00.cfg \
             file://user_2022-05-18-14-08-00.cfg \
+            file://user_2022-05-21-10-06-00.cfg \
+            file://user_2022-05-21-12-40-00.cfg \
             "
 
