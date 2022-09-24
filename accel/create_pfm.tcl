@@ -14,7 +14,6 @@ file delete -force ${IMG_DIR}
 file mkdir ${IMG_DIR}
 file copy petalinux/images/linux/boot.scr ${IMG_DIR}
 file copy petalinux/images/linux/image.ub ${IMG_DIR}
-file copy petalinux/images/linux/rootfs.cpio.gz.u-boot ${IMG_DIR}
 
 # Generate
 platform create -name ${PFM_NAME} -hw {sd_blk.xsa} -no-boot-bsp -out ${OUT_DIR}
