@@ -3338,7 +3338,7 @@ CONFIG_wpa-supplicant=y
 #
 # ntp
 #
-# CONFIG_ntp is not set
+CONFIG_ntp=y
 # CONFIG_ntp-dev is not set
 # CONFIG_ntp-dbg is not set
 
@@ -3894,6 +3894,6 @@ CONFIG_peekpoke=y
 #
 # PetaLinux RootFS Settings
 #
-CONFIG_ADD_EXTRA_USERS="root:root;petalinux:petalinux;"
-CONFIG_ADD_USERS_TO_GROUPS="petalinux:audio,video;"
-CONFIG_ADD_USERS_TO_SUDOERS="petalinux"
+CONFIG_ADD_EXTRA_USERS="root:root;zynq:zynq;"
+CONFIG_ADD_USERS_TO_GROUPS="zynq:audio,video;"
+CONFIG_ADD_USERS_TO_SUDOERS="zynq"
