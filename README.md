@@ -1,6 +1,6 @@
 # snickerdoodle-black (2022.2)
 
--  No longer Vitis acceleration platform is not included any more, since Xilinx stopped support for Zynq-7000: [Supported Platforms](https://docs.xilinx.com/r/en-US/ug1393-vitis-application-acceleration/Supported-Platforms)
+-  Vitis acceleration platform is not included any more, since Xilinx stopped support for Zynq-7000: [Supported Platforms](https://docs.xilinx.com/r/en-US/ug1393-vitis-application-acceleration/Supported-Platforms)
 
 ## Prerequisite
 
