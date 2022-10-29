@@ -1,0 +1,21 @@
+# Xilinx
+*.Xil
+*.log
+*.jou
+*.xsa
+*.bit
+sd_card
+
+# PetaLinux
+*/petalinux/project-spec/meta-user/recipes-connectivity/
+*/petalinux/project-spec/meta-user/recipes-ml/
+
+# data
+*.zip
+*.tar.*
+
+# VSCode setting
+.vscode
+
+# temp.
+_*
