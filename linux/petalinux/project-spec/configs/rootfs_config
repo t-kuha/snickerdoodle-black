@@ -156,7 +156,7 @@ CONFIG_haveged=y
 #
 # i2c-tools 
 #
-# CONFIG_i2c-tools is not set
+CONFIG_i2c-tools=y
 # CONFIG_i2c-tools-dev is not set
 # CONFIG_i2c-tools-dbg is not set
 # CONFIG_i2c-tools-misc is not set
@@ -338,7 +338,7 @@ CONFIG_mtd-utils=y
 #
 # usbutils 
 #
-# CONFIG_usbutils is not set
+CONFIG_usbutils=y
 # CONFIG_usbutils-dbg is not set
 # CONFIG_usbutils-dev is not set
 
@@ -3892,6 +3892,7 @@ CONFIG_Init-manager-sysvinit=y
 #
 # user packages 
 #
+CONFIG_fuse-exfat=y
 # CONFIG_gpio-demo is not set
 # CONFIG_peekpoke is not set
 
