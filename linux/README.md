@@ -1,4 +1,4 @@
-# Embedded Linux
+# Embedded Linux with piSmasher baseboard
 
 ***
 
@@ -48,9 +48,6 @@ $ petalinux-config -p ${PRJ} --get-hw-description=.
 $ petalinux-config -p ${PRJ} -c kernel
 $ petalinux-config -p ${PRJ} -c u-boot
 $ petalinux-config -p ${PRJ} -c rootfs
-
-# Show actual build time of Kernel & u-boot
-$ petalinux-build -p ${PRJ} -x cleansstate
 
 # Build project
 $ petalinux-build -p ${PRJ}
