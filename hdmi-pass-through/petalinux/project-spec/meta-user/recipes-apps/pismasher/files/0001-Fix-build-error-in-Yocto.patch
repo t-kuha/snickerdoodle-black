@@ -1,0 +1,22 @@
+From cbf3602ef9408e7f7f4aa76f859b2ae1cfdd8087 Mon Sep 17 00:00:00 2001
+From: t-kuha <imagingtechnerd@gmail.com>
+Date: Fri, 4 Nov 2022 00:15:52 +0900
+Subject: [PATCH] Fix build error in Yocto
+
+---
+ projects/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 6320cca..534e38b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,4 +1,4 @@
+-export CC = arm-linux-gnueabihf-gcc
++# export CC = arm-linux-gnueabihf-gcc
+ 
+ export OK_COLOR    = \033[0;32m
+ export ERROR_COLOR = \033[0;31m
+-- 
+2.25.1
+

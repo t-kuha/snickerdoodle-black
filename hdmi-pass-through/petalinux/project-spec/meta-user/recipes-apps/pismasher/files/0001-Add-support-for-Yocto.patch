@@ -1,0 +1,134 @@
+From bd15081ec66e1e9d5e0e9c81831dabdf5c173b84 Mon Sep 17 00:00:00 2001
+From: t-kuha <imagingtechnerd@gmail.com>
+Date: Fri, 4 Nov 2022 00:58:31 +0900
+Subject: [PATCH] Add support for Yocto
+
+---
+ Makefile                | 2 +-
+ audio-config/Makefile   | 2 +-
+ hdmi-config/Makefile    | 2 +-
+ hdmi-edid/Makefile      | 2 +-
+ uio-clk-wiz/Makefile    | 2 +-
+ uio-vdma/Makefile       | 2 +-
+ uio-vtc/Makefile        | 2 +-
+ vid-tpg-config/Makefile | 2 +-
+ video-config/Makefile   | 2 +-
+ 9 files changed, 9 insertions(+), 9 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 6320cca..534e38b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,4 +1,4 @@
+-export CC = arm-linux-gnueabihf-gcc
++# export CC = arm-linux-gnueabihf-gcc
+ 
+ export OK_COLOR    = \033[0;32m
+ export ERROR_COLOR = \033[0;31m
+diff --git a/audio-config/Makefile b/audio-config/Makefile
+index 47b2f94..df3f7c4 100644
+--- a/audio-config/Makefile
++++ b/audio-config/Makefile
+@@ -10,7 +10,7 @@ CFLAGS	+= $(addprefix -I ,../$(LIBDIR))
+ 
+ all: $(OBJS)
+ 	@printf "APP $(target)\n"
+-	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS)
++	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS) $(LDFLAGS)
+ 
+ %.o: %.c
+ 	@printf "CC $(notdir $@)\n"
+diff --git a/hdmi-config/Makefile b/hdmi-config/Makefile
+index 882fccc..6c4650d 100644
+--- a/hdmi-config/Makefile
++++ b/hdmi-config/Makefile
+@@ -14,7 +14,7 @@ CFLAGS	+= $(addprefix -I ,../$(LIBDIR))
+ 
+ all: $(OBJS)
+ 	@printf "APP $(target)\n"
+-	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS)
++	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS) $(LDFLAGS)
+ 
+ %.o: %.c
+ 	@printf "CC $(notdir $@)\n"
+diff --git a/hdmi-edid/Makefile b/hdmi-edid/Makefile
+index 9472909..e1fb399 100644
+--- a/hdmi-edid/Makefile
++++ b/hdmi-edid/Makefile
+@@ -13,7 +13,7 @@ CFLAGS	+= $(addprefix -I ,../$(LIBDIR))
+ 
+ all: $(OBJS)
+ 	@printf "APP $(target)\n"
+-	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS)
++	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS) $(LDFLAGS)
+ 
+ %.o: %.c
+ 	@printf "CC $(notdir $@)\n"
+diff --git a/uio-clk-wiz/Makefile b/uio-clk-wiz/Makefile
+index 9affba6..e9402bc 100644
+--- a/uio-clk-wiz/Makefile
++++ b/uio-clk-wiz/Makefile
+@@ -9,7 +9,7 @@ CFLAGS	+= $(addprefix -I ,../$(LIBDIR))
+ 
+ all: $(OBJS)
+ 	@printf "APP $(target)\n"
+-	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS)
++	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS) $(LDFLAGS)
+ 
+ %.o: %.c
+ 	@printf "CC $(notdir $@)\n"
+diff --git a/uio-vdma/Makefile b/uio-vdma/Makefile
+index 470d798..036d872 100644
+--- a/uio-vdma/Makefile
++++ b/uio-vdma/Makefile
+@@ -9,7 +9,7 @@ CFLAGS	+= $(addprefix -I ,../$(LIBDIR))
+ 
+ all: $(OBJS)
+ 	@printf "APP $(target)\n"
+-	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS)
++	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS) $(LDFLAGS)
+ 
+ %.o: %.c
+ 	@printf "CC $(notdir $@)\n"
+diff --git a/uio-vtc/Makefile b/uio-vtc/Makefile
+index 6681fb3..5c8334f 100644
+--- a/uio-vtc/Makefile
++++ b/uio-vtc/Makefile
+@@ -9,7 +9,7 @@ CFLAGS	+= $(addprefix -I ,../$(LIBDIR))
+ 
+ all: $(OBJS)
+ 	@printf "APP $(target)\n"
+-	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS)
++	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS) $(LDFLAGS)
+ 
+ %.o: %.c
+ 	@printf "CC $(notdir $@)\n"
+diff --git a/vid-tpg-config/Makefile b/vid-tpg-config/Makefile
+index 330b47c..f3f40b8 100644
+--- a/vid-tpg-config/Makefile
++++ b/vid-tpg-config/Makefile
+@@ -9,7 +9,7 @@ CFLAGS	+= $(addprefix -I ,../$(LIBDIR))
+ 
+ all: $(OBJS)
+ 	@printf "APP $(target)\n"
+-	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS)
++	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS) $(LDFLAGS)
+ 
+ %.o: %.c
+ 	@printf "CC $(notdir $@)\n"
+diff --git a/video-config/Makefile b/video-config/Makefile
+index 98bdcfe..9532198 100644
+--- a/video-config/Makefile
++++ b/video-config/Makefile
+@@ -15,7 +15,7 @@ CFLAGS	+= $(addprefix -I ,../$(LIBDIR))
+ 
+ all: $(OBJS)
+ 	@printf "APP $(target)\n"
+-	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS)
++	@$(CC) -o $(addprefix ../$(BUILDDIR)/, $(target)) $(OBJS) $(LDFLAGS)
+ 
+ %.o: %.c
+ 	@printf "CC $(notdir $@)\n"
+-- 
+2.25.1
+
