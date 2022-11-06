@@ -134,3 +134,12 @@
     dr_mode = "host";
     usb-phy = <&usb_phy0>;
 };
+
+&gpio0 {
+    // Enable HDMI TX/RX IC 
+    hdmi_gpio {
+        gpio-hog;
+        gpios = <52 GPIO_ACTIVE_HIGH 53 GPIO_ACTIVE_HIGH>;
+        output-high;
+    };
+};
