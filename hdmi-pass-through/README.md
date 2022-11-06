@@ -37,6 +37,20 @@ $ petalinux-package -p ${PRJ} --boot --force \
 --u-boot petalinux/images/linux/u-boot-dtb.elf
 ```
 
+## Run
+
+- Copy ``BOOT.bin``, ``image.ub``, and ``boot.scr`` into micro SD card
+
+- Boot the board
+
+- Configure HDMI & Audio codec:
+  - No need for GPIO export
+
+```bash
+$ sudo hdmi-config -m 1920x1080
+$ sudo audio-config -i <linein|mic> -o <lineout|headphones>
+```
+
 ***
 
 ## How to create PetaLinux project from scratch
