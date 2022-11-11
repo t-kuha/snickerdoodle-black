@@ -100,7 +100,7 @@ CONFIG_system-zynq=y
 #
 # dnf
 #
-CONFIG_dnf=y
+# CONFIG_dnf is not set
 
 #
 # e2fsprogs 
@@ -3339,7 +3339,7 @@ CONFIG_wpa-supplicant=y
 #
 # ntp
 #
-# CONFIG_ntp is not set
+CONFIG_ntp=y
 # CONFIG_ntp-dev is not set
 # CONFIG_ntp-dbg is not set
 
@@ -3883,7 +3883,9 @@ CONFIG_u-boot-tools=y
 CONFIG_imagefeature-ssh-server-dropbear=y
 # CONFIG_imagefeature-ssh-server-openssh is not set
 CONFIG_imagefeature-hwcodecs=y
-# CONFIG_imagefeature-package-management is not set
+CONFIG_imagefeature-package-management=y
+CONFIG_package-feed-uris=""
+CONFIG_package-feed-archs=""
 # CONFIG_imagefeature-debug-tweaks is not set
 # CONFIG_auto-login is not set
 # CONFIG_Init-manager-systemd is not set
@@ -3898,7 +3900,7 @@ CONFIG_Init-manager-sysvinit=y
 #
 # PetaLinux RootFS Settings
 #
-CONFIG_ADD_EXTRA_USERS="root:root;zynq:zynq;"
+CONFIG_ADD_EXTRA_USERS="root:root;zynq:zynq"
 CONFIG_CREATE_NEW_GROUPS="aie;"
 CONFIG_ADD_USERS_TO_GROUPS="zynq:audio,video,aie;"
 CONFIG_ADD_USERS_TO_SUDOERS="zynq"
