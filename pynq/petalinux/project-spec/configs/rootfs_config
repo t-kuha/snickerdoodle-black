@@ -664,7 +664,7 @@ CONFIG_nfs-utils=y
 #
 # git 
 #
-# CONFIG_git is not set
+CONFIG_git=y
 # CONFIG_git-bash-completion is not set
 # CONFIG_gitweb is not set
 # CONFIG_git-perltools is not set
@@ -986,7 +986,7 @@ CONFIG_pciutils=y
 #
 # python3-numpy 
 #
-# CONFIG_python3-numpy is not set
+CONFIG_python3-numpy=y
 # CONFIG_python3-numpy-dev is not set
 # CONFIG_python3-numpy-dbg is not set
 
@@ -1140,7 +1140,7 @@ CONFIG_run-postinsts=y
 #
 # boost 
 #
-# CONFIG_boost is not set
+CONFIG_boost=y
 # CONFIG_boost-random is not set
 # CONFIG_boost-regex is not set
 # CONFIG_boost-atomic is not set
@@ -2032,21 +2032,21 @@ CONFIG_run-postinsts=y
 #
 # xrt
 #
-# CONFIG_xrt is not set
-# CONFIG_xrt-dev is not set
+CONFIG_xrt=y
+CONFIG_xrt-dev=y
 # CONFIG_xrt-dbg is not set
 
 #
 # zocl
 #
-# CONFIG_zocl is not set
+CONFIG_zocl=y
 # CONFIG_zocl-dev is not set
 # CONFIG_zocl-dbg is not set
 
 #
 # opencl-clhpp
 #
-# CONFIG_opencl-clhpp-dev is not set
+CONFIG_opencl-clhpp-dev=y
 
 #
 # opencl-headers
@@ -2625,7 +2625,7 @@ CONFIG_packagegroup-core-ssh-dropbear=y
 #
 # python3 
 #
-# CONFIG_python3 is not set
+CONFIG_python3=y
 # CONFIG_python3-smtpd is not set
 # CONFIG_python3-syslog is not set
 # CONFIG_python3-pickle is not set
@@ -2633,7 +2633,7 @@ CONFIG_packagegroup-core-ssh-dropbear=y
 # CONFIG_python3-db is not set
 # CONFIG_python3-fcntl is not set
 # CONFIG_python3-html is not set
-# CONFIG_python3-core is not set
+CONFIG_python3-core=y
 # CONFIG_python3-distutils is not set
 # CONFIG_python3-terminal is not set
 # CONFIG_python3-pprint is not set
@@ -2641,10 +2641,10 @@ CONFIG_packagegroup-core-ssh-dropbear=y
 # CONFIG_python3-unixadmin is not set
 # CONFIG_python3-mime is not set
 # CONFIG_python3-logging is not set
-# CONFIG_python3-resource is not set
+CONFIG_python3-resource=y
 # CONFIG_python3-email is not set
-# CONFIG_python3-math is not set
-# CONFIG_python3-json is not set
+CONFIG_python3-math=y
+CONFIG_python3-json=y
 # CONFIG_python3-image is not set
 # CONFIG_python3-stringold is not set
 # CONFIG_python3-pydoc is not set
@@ -2663,12 +2663,12 @@ CONFIG_packagegroup-core-ssh-dropbear=y
 # CONFIG_python3-sqlite3 is not set
 # CONFIG_python3-2to3 is not set
 # CONFIG_libpython3 is not set
-# CONFIG_python3-xml is not set
-# CONFIG_python3-threading is not set
+CONFIG_python3-xml=y
+CONFIG_python3-threading=y
 # CONFIG_python3-modules is not set
 # CONFIG_python3-dev is not set
 # CONFIG_python3-curses is not set
-# CONFIG_python3-multiprocessing is not set
+CONFIG_python3-multiprocessing=y
 # CONFIG_python3-crypt is not set
 # CONFIG_python3-compression is not set
 # CONFIG_python3-shell is not set
@@ -2676,18 +2676,18 @@ CONFIG_packagegroup-core-ssh-dropbear=y
 # CONFIG_python3-numbers is not set
 # CONFIG_python3-audio is not set
 # CONFIG_python3-pyvenv is not set
-# CONFIG_python3-asyncio is not set
+CONFIG_python3-asyncio=y
 # CONFIG_python3-misc is not set
 # CONFIG_python3-datetime is not set
 # CONFIG_python3-compile is not set
-# CONFIG_python3-mmap is not set
+CONFIG_python3-mmap=y
 # CONFIG_python3-mailbox is not set
 # CONFIG_python3-ctypes is not set
 
 #
 # python3-async 
 #
-# CONFIG_python3-async is not set
+CONFIG_python3-async=y
 # CONFIG_python3-async-dev is not set
 # CONFIG_python3-async-dbg is not set
 
@@ -2708,7 +2708,7 @@ CONFIG_packagegroup-core-ssh-dropbear=y
 #
 # python3-setuptools 
 #
-# CONFIG_python3-setuptools is not set
+CONFIG_python3-setuptools=y
 # CONFIG_python3-setuptools-dev is not set
 # CONFIG_python3-setuptools-dbg is not set
 
@@ -3404,7 +3404,7 @@ CONFIG_u-boot-tools=y
 #
 # libdrm 
 #
-# CONFIG_libdrm is not set
+CONFIG_libdrm=y
 # CONFIG_libdrm-omap is not set
 # CONFIG_libdrm-amdgpu is not set
 # CONFIG_libdrm-dev is not set
@@ -3823,7 +3823,7 @@ CONFIG_u-boot-tools=y
 #
 # packagegroup-petalinux-python-modules 
 #
-# CONFIG_packagegroup-petalinux-python-modules is not set
+CONFIG_packagegroup-petalinux-python-modules=y
 # CONFIG_packagegroup-petalinux-python-modules-dbg is not set
 # CONFIG_packagegroup-petalinux-python-modules-dev is not set
 
@@ -3895,6 +3895,7 @@ CONFIG_Init-manager-sysvinit=y
 # user packages 
 #
 # CONFIG_gpio-demo is not set
+CONFIG_opencl-headers-dev=y
 # CONFIG_peekpoke is not set
 
 #
