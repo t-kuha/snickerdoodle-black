@@ -1,0 +1,5 @@
+PETALINUX_VER=2024.2
+HARDWARE_PATH=/home/imagingtechnerd/work/snickerdoodle-black/linux/sd_blk.xsa
+HDF_EXT=xsa
+VALIDATE_HW_CHKSUM=1
+YOCTO_SDK=f20b3d97af7961e8a255990489779ec7e341165af8ded0845145cd1cbfa5b91f
