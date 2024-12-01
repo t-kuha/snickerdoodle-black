@@ -1,3 +1,104 @@
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/interrupt-controller/irq.h>
+
 /include/ "system-conf.dtsi"
 / {
+    // POWER EN
+    power_en_reg: fixed-regulator-powen {
+        compatible = "regulator-fixed";
+        regulator-name = "power-en-regulator";
+        gpio = <&gpio0 20 GPIO_ACTIVE_HIGH>;
+        regulator-min-microvolt = <1800000>;
+        regulator-max-microvolt = <1800000>;
+        startup-delay-us = <70000>;
+        regulator-always-on;
+        enable-active-high;
+    };
+
+    wlan_en_reg: fixedregulator@2 {
+        compatible = "regulator-fixed";
+        regulator-name = "wlan-en-regulator";
+        regulator-min-microvolt = <1800000>;
+        regulator-max-microvolt = <1800000>;
+        startup-delay-us = <70000>;
+
+        // WLAN_EN GPIO for this board
+        gpio = <&gpio0 9 GPIO_ACTIVE_HIGH>;
+        enable-active-high;
+    };
+
+	// USB
+    usb_phy0: phy0 {
+        compatible = "usb-nop-xceiv";
+        #phy-cells = <0>;
+        view-port = <0x170>;
+        drv-vbus;
+    };
+};
+
+&spi1 {
+    status = "okay";
+    num-cs = <1>;
+    is-decoded-cs = <0>;
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    dev@0 {
+        compatible = "lwn,bk4";
+        reg = <0>;
+        spi-max-frequency = <1000000>;
+    };
+};
+
+&qspi {
+    // QSPI
+    status = "okay";
+    is-dual = <0>;
+    num-cs = <1>;
+    xlnx,qspi-mode = <1>;
+
+    flash@0 {
+        #address-cells = <1>;
+        #size-cells =<1>;
+        compatible = "jedec,spi-nor";
+        reg = <0>;
+        spi-max-frequency = <50000000>;
+        m25p,fast-read;
+    };
+};
+
+&i2c1 {
+    status = "okay";
+    clock-frequency = <100000>;
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    usb2514b@2c {
+        compatible = "microchip,usb2514b";
+        reg = <0x2c>;
+        reset-gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
+    };
+};
+
+&sdhci1 {
+    // Wi-Fi
+    vmmc-supply = <&wlan_en_reg>;
+    bus-width = <4>;
+    cap-power-off-card;
+    keep-power-in-suspend;
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    wlcore: wlcore@2 {
+        compatible = "ti,wl1837";
+        reg = <2>;
+        interrupt-parent = <&gpio0>;
+        interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
+    };
+};
+
+&usb0 {
+    status = "okay";
+    dr_mode = "host";
+    usb-phy = <&usb_phy0>;
 };

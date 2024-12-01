@@ -156,7 +156,7 @@ CONFIG_fpga-manager-script=y
 #
 # i2c-tools 
 #
-# CONFIG_i2c-tools is not set
+CONFIG_i2c-tools=y
 # CONFIG_i2c-tools-dev is not set
 # CONFIG_i2c-tools-dbg is not set
 # CONFIG_i2c-tools-misc is not set
@@ -338,7 +338,7 @@ CONFIG_mtd-utils=y
 #
 # usbutils 
 #
-# CONFIG_usbutils is not set
+CONFIG_usbutils=y
 # CONFIG_usbutils-dbg is not set
 # CONFIG_usbutils-dev is not set
 
@@ -461,7 +461,7 @@ CONFIG_mtd-utils=y
 #
 # can-utils 
 #
-CONFIG_can-utils=y
+# CONFIG_can-utils is not set
 # CONFIG_can-utils-dbg is not set
 # CONFIG_can-utils-dev is not set
 
@@ -504,7 +504,7 @@ CONFIG_can-utils=y
 #
 # nfs-utils 
 #
-CONFIG_nfs-utils=y
+# CONFIG_nfs-utils is not set
 # CONFIG_nfs-utils-dev is not set
 # CONFIG_nfs-utils-client is not set
 # CONFIG_nfs-utils-stats is not set
@@ -2192,7 +2192,7 @@ CONFIG_linux-xlnx-udev-rules=y
 #
 # gcc-runtime 
 #
-# CONFIG_libstdcPLUSPLUS is not set
+CONFIG_libstdcPLUSPLUS=y
 # CONFIG_libstdcPLUSPLUS-dev is not set
 
 #
@@ -3277,7 +3277,7 @@ CONFIG_bridge-utils=y
 #
 # wpa-supplicant 
 #
-# CONFIG_wpa-supplicant is not set
+CONFIG_wpa-supplicant=y
 # CONFIG_wpa-supplicant-passphrase is not set
 # CONFIG_wpa-supplicant-cli is not set
 # CONFIG_wpa-supplicant-dev is not set
@@ -3286,7 +3286,7 @@ CONFIG_bridge-utils=y
 #
 # ntp
 #
-# CONFIG_ntp is not set
+CONFIG_ntp=y
 # CONFIG_ntp-dev is not set
 # CONFIG_ntp-dbg is not set
 
@@ -3759,7 +3759,9 @@ CONFIG_u-boot-tools=y
 # CONFIG_imagefeature-ssh-server-dropbear is not set
 CONFIG_imagefeature-ssh-server-openssh=y
 CONFIG_imagefeature-hwcodecs=y
-# CONFIG_imagefeature-package-management is not set
+CONFIG_imagefeature-package-management=y
+CONFIG_package-feed-uris=""
+CONFIG_package-feed-archs=""
 # CONFIG_imagefeature-debug-tweaks is not set
 # CONFIG_imagefeature-empty-root-password is not set
 # CONFIG_imagefeature-serial-autologin-root is not set
@@ -3769,13 +3771,14 @@ CONFIG_Init-manager-sysvinit=y
 #
 # user packages 
 #
+CONFIG_fuse-exfat=y
 # CONFIG_gpio-demo is not set
 # CONFIG_peekpoke is not set
 
 #
 # PetaLinux RootFS Settings
 #
-CONFIG_ADD_EXTRA_USERS="root:root;petalinux::passwd-expire;"
+CONFIG_ADD_EXTRA_USERS="root:root;petalinux:zynq"
 CONFIG_CREATE_NEW_GROUPS="aie;"
 CONFIG_ADD_USERS_TO_GROUPS="petalinux:audio,video,aie,input;"
 CONFIG_ADD_USERS_TO_SUDOERS="petalinux"

@@ -1,14 +1,14 @@
-2024-11-30 13:11:10,352 - [DEBUG] Using xsct from : /home/imagingtechnerd/amd/PetaLinux/2024.2/components/xsct/bin/xsct
-2024-11-30 13:11:10,352 - [INFO] Getting Platform info from HW file
-2024-11-30 13:11:10,353 - [DEBUG] Using the soc_family specified by user:zynq
-2024-11-30 13:11:10,374 - [DEBUG] Hardware Configuration:
-2024-11-30 13:11:10,375 - [DEBUG] MACHINE     = "None"
-2024-11-30 13:11:10,375 - [DEBUG] DEVICE_ID   = "7z020"
-2024-11-30 13:11:10,375 - [DEBUG] SOC_FAMILY  = "zynq"
-2024-11-30 13:11:10,376 - [DEBUG] SOC_VARIANT = ""
-2024-11-30 13:11:10,376 - [INFO] Silentconfig project
-2024-11-30 13:11:10,376 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/imagingtechnerd/work/snickerdoodle-black/linux/petalinux/project-spec/configs/config conf /home/imagingtechnerd/work/snickerdoodle-black/linux/petalinux/project-spec/configs/configs/Kconfig
-2024-11-30 13:11:10,385 - [DEBUG] *
+2024-12-01 06:46:53,628 - [DEBUG] Using xsct from : /home/imagingtechnerd/amd/PetaLinux/2024.2/components/xsct/bin/xsct
+2024-12-01 06:46:53,628 - [INFO] Getting Platform info from HW file
+2024-12-01 06:46:53,628 - [DEBUG] Using the soc_family specified by user:zynq
+2024-12-01 06:46:53,648 - [DEBUG] Hardware Configuration:
+2024-12-01 06:46:53,648 - [DEBUG] MACHINE     = "None"
+2024-12-01 06:46:53,648 - [DEBUG] DEVICE_ID   = "7z020"
+2024-12-01 06:46:53,648 - [DEBUG] SOC_FAMILY  = "zynq"
+2024-12-01 06:46:53,648 - [DEBUG] SOC_VARIANT = ""
+2024-12-01 06:46:53,648 - [INFO] Silentconfig project
+2024-12-01 06:46:53,648 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/imagingtechnerd/work/snickerdoodle-black/linux/petalinux/project-spec/configs/config conf /home/imagingtechnerd/work/snickerdoodle-black/linux/petalinux/project-spec/configs/configs/Kconfig
+2024-12-01 06:46:53,656 - [DEBUG] *
 * PetaLinux System Configuration
 *
 ZYNQ Configuration (SYSTEM_ZYNQ) [Y/?] y
@@ -115,7 +115,7 @@ Extra dts/dtsi files (SUBSYSTEM_EXTRA_DT_FILES) []
 *
 generate boot args automatically (SUBSYSTEM_BOOTARGS_AUTO) [Y/n/?] 
 enable kernel earlyprintk (SUBSYSTEM_BOOTARGS_EARLYPRINTK) [Y/n/?] 
-Auto generated bootargs (NO EDIT!) (SUBSYSTEM_BOOTARGS_GENERATED) [console=ttyPS0,115200 earlycon root=/dev/ram0 rw] 
+Auto generated bootargs (NO EDIT!) (SUBSYSTEM_BOOTARGS_GENERATED) [console=ttyPS0,115200 earlycon root=/dev/mmcblk0p2 ro rootwait] 
 Add extra boot args (SUBSYSTEM_EXTRA_BOOTARGS) [] 
 Devicetree compiler flags (SUBSYSTEM_DEVICETREE_COMPILER_FLAGS) [-@] 
 Devicetree overlay (SUBSYSTEM_DTB_OVERLAY) [N/y/?] 
@@ -183,23 +183,21 @@ linux config target (SUBSYSTEM_LINUX_CONFIG_TARGET) []
 *
 Root filesystem type
   1. INITRAMFS (SUBSYSTEM_ROOTFS_INITRAMFS)
-> 2. INITRD (SUBSYSTEM_ROOTFS_INITRD)
+  2. INITRD (SUBSYSTEM_ROOTFS_INITRD)
   3. UBI/UBIFS (SUBSYSTEM_ROOTFS_UBIFS)
   4. NFS (SUBSYSTEM_ROOTFS_NFS)
-  5. EXT4 (SD/eMMC/SATA/USB) (SUBSYSTEM_ROOTFS_EXT4)
+> 5. EXT4 (SD/eMMC/SATA/USB) (SUBSYSTEM_ROOTFS_EXT4)
   6. other (SUBSYSTEM_ROOTFS_OTHER)
-choice[1-6]: RAMDISK loadaddr (SUBSYSTEM_INITRD_RAMDISK_LOADADDR) [0x0] 
-INITRAMFS/INITRD Image name (SUBSYSTEM_INITRAMFS_IMAGE_NAME) [petalinux-image-minimal] 
+choice[1-6]: Device node of SD device (SUBSYSTEM_SDROOT_DEV) [/dev/mmcblk0p2] 
 name for bootable kernel image (SUBSYSTEM_UIMAGE_NAME) [image.ub] 
-Root filesystem formats (SUBSYSTEM_RFS_FORMATS) [cpio cpio.gz cpio.gz.u-boot ext4 tar.gz] 
-Copy final images to tftpboot (SUBSYSTEM_COPY_TO_TFTPBOOT) [Y/n/?] 
-  tftpboot directory (SUBSYSTEM_TFTPBOOT_DIR) [/tftpboot] 
+Root filesystem formats (SUBSYSTEM_RFS_FORMATS) [tar.gz] 
+Copy final images to tftpboot (SUBSYSTEM_COPY_TO_TFTPBOOT) [N/y/?] 
 *
 * Firmware Version Configuration
 *
-Host name (SUBSYSTEM_HOSTNAME) [petalinux] 
-Product name (SUBSYSTEM_PRODUCT) [petalinux] 
-Firmware Version (SUBSYSTEM_FW_VERSION) [1.00] 
+Host name (SUBSYSTEM_HOSTNAME) [sd-blk] 
+Product name (SUBSYSTEM_PRODUCT) [sd-blk] 
+Firmware Version (SUBSYSTEM_FW_VERSION) [2024.2] 
 *
 * Yocto Settings
 *
@@ -243,9 +241,9 @@ user layer 0 (USER_LAYER_0) []
 #
 # configuration written to /home/imagingtechnerd/work/snickerdoodle-black/linux/petalinux/project-spec/configs/config
 #
-2024-11-30 13:11:10,433 - [INFO] Silentconfig rootfs
-2024-11-30 13:11:10,434 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/imagingtechnerd/work/snickerdoodle-black/linux/petalinux/project-spec/configs/rootfs_config conf /home/imagingtechnerd/work/snickerdoodle-black/linux/petalinux/project-spec/configs/rootfsconfigs/Kconfig
-2024-11-30 13:11:10,449 - [DEBUG] *
+2024-12-01 06:46:53,708 - [INFO] Silentconfig rootfs
+2024-12-01 06:46:53,709 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/imagingtechnerd/work/snickerdoodle-black/linux/petalinux/project-spec/configs/rootfs_config conf /home/imagingtechnerd/work/snickerdoodle-black/linux/petalinux/project-spec/configs/rootfsconfigs/Kconfig
+2024-12-01 06:46:53,724 - [DEBUG] *
 * Configuration
 *
 *
@@ -380,7 +378,7 @@ haveged (haveged) [N/y/?]
 *
 * i2c-tools 
 *
-i2c-tools (i2c-tools) [N/y/?] 
+i2c-tools (i2c-tools) [Y/n/?] 
 i2c-tools-dev (i2c-tools-dev) [N/y/?] 
 i2c-tools-dbg (i2c-tools-dbg) [N/y/?] 
 i2c-tools-misc (i2c-tools-misc) [N/y/?] 
@@ -540,7 +538,7 @@ update-rc.d-dbg (update-rc.d-dbg) [N/y/?]
 *
 * usbutils 
 *
-usbutils (usbutils) [N/y/?] 
+usbutils (usbutils) [Y/n/?] 
 usbutils-dbg (usbutils-dbg) [N/y/?] 
 usbutils-dev (usbutils-dev) [N/y/?] 
 *
@@ -647,7 +645,7 @@ canutils-dev (canutils-dev) [N/y/?]
 *
 * can-utils 
 *
-can-utils (can-utils) [Y/n/?] 
+can-utils (can-utils) [N/y/?] 
 can-utils-dbg (can-utils-dbg) [N/y/?] 
 can-utils-dev (can-utils-dev) [N/y/?] 
 *
@@ -684,7 +682,7 @@ minicom-dev (minicom-dev) [N/y/?]
 *
 * nfs-utils 
 *
-nfs-utils (nfs-utils) [Y/n/?] 
+nfs-utils (nfs-utils) [N/y/?] 
 nfs-utils-dev (nfs-utils-dev) [N/y/?] 
 nfs-utils-client (nfs-utils-client) [N/y/?] 
 nfs-utils-stats (nfs-utils-stats) [N/y/?] 
@@ -2147,7 +2145,7 @@ font-util-dbg (font-util-dbg) [N/y/?]
 *
 * gcc-runtime 
 *
-libstdc++ (libstdcPLUSPLUS) [N/y/?] 
+libstdc++ (libstdcPLUSPLUS) [Y/n/?] 
 libstdc++-dev (libstdcPLUSPLUS-dev) [N/y/?] 
 *
 * gcc-sanitizers 
@@ -3101,7 +3099,7 @@ mobile-broadband-provider-info-dev (mobile-broadband-provider-info-dev) [N/y/?]
 *
 * wpa-supplicant 
 *
-wpa-supplicant (wpa-supplicant) [N/y/?] 
+wpa-supplicant (wpa-supplicant) [Y/n/?] 
 wpa-supplicant-passphrase (wpa-supplicant-passphrase) [N/y/?] 
 wpa-supplicant-cli (wpa-supplicant-cli) [N/y/?] 
 wpa-supplicant-dev (wpa-supplicant-dev) [N/y/?] 
@@ -3109,7 +3107,7 @@ wpa-supplicant-dbg (wpa-supplicant-dbg) [N/y/?]
 *
 * ntp
 *
-ntp (ntp) [N/y/?] 
+ntp (ntp) [Y/n/?] 
 ntp-dev (ntp-dev) [N/y/?] 
 ntp-dbg (ntp-dbg) [N/y/?] 
 *
@@ -3521,7 +3519,9 @@ packagegroup-core-x11-dev (packagegroup-core-x11-dev) [N/y/?]
 ssh-server-dropbear (imagefeature-ssh-server-dropbear) [N/y/?] 
 ssh-server-openssh (imagefeature-ssh-server-openssh) [Y/n/?] 
 hwcodecs (imagefeature-hwcodecs) [Y/n/?] 
-package-management (imagefeature-package-management) [N/y/?] 
+package-management (imagefeature-package-management) [Y/n/?] 
+  package-feed-uris (package-feed-uris) [] 
+  package-feed-archs (package-feed-archs) [] 
 debug-tweaks (imagefeature-debug-tweaks) [N/y/?] 
 empty-root-password (imagefeature-empty-root-password) [N/y/?] 
 serial-autologin-root (imagefeature-serial-autologin-root) [N/y/?] 
@@ -3531,19 +3531,20 @@ Init-manager
 choice[1-2]: *
 * user packages 
 *
+fuse-exfat (fuse-exfat) [Y/n/?] 
 gpio-demo (gpio-demo) [N/y/?] 
 peekpoke (peekpoke) [N/y/?] 
 *
 * PetaLinux RootFS Settings
 *
-Add Extra Users (ADD_EXTRA_USERS) [root:root;petalinux::passwd-expire;] 
+Add Extra Users (ADD_EXTRA_USERS) [root:root;petalinux:zynq] 
 Create new Groups (CREATE_NEW_GROUPS) [aie;] 
 Add Users to Groups (ADD_USERS_TO_GROUPS) [petalinux:audio,video,aie,input;] 
 Add Users to Sudo users (ADD_USERS_TO_SUDOERS) [petalinux] 
 #
 # configuration written to /home/imagingtechnerd/work/snickerdoodle-black/linux/petalinux/project-spec/configs/rootfs_config
 #
-2024-11-30 13:11:10,454 - [INFO] Generating configuration files
-2024-11-30 13:11:10,456 - [DEBUG] No multilibs enabled.
-2024-11-30 13:11:10,456 - [DEBUG] No multilibs enabled.
-2024-11-30 13:11:10,471 - [DEBUG] Shutting down bitbake
+2024-12-01 06:46:53,730 - [INFO] Generating configuration files
+2024-12-01 06:46:53,732 - [DEBUG] No multilibs enabled.
+2024-12-01 06:46:53,732 - [DEBUG] No multilibs enabled.
+2024-12-01 06:46:53,749 - [DEBUG] Shutting down bitbake
