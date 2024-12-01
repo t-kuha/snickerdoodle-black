@@ -9,7 +9,7 @@ auto wlx38d269df208d
 iface wlx38d269df208d inet dhcp
 	wireless_mode managed
 	wireless_essid any
-	wpa-driver wext
+	wpa-driver nl80211
 	wpa-conf /etc/wpa_supplicant.conf
 
 #iface atml0 inet dhcp
