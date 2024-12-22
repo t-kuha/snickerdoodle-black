@@ -31,9 +31,18 @@ $ petalinux-build -p ${PRJ} --sdk
 - Output is: ``petalinux/images/linux/BOOT.BIN``
 
 ```shell
-$ petalinux-package -p ${PRJ} --boot --force \
+# It is recommended to start using new python command line Argument.
+$ petalinux-package --force -D boot \
+-p ${PRJ} \
 --fsbl petalinux/images/linux/zynq_fsbl.elf \
 --fpga petalinux/images/linux/system.bit \
+--u-boot petalinux/images/linux/u-boot-dtb.elf
+
+# or
+$ petalinux-package --force -D boot \
+-p ${PRJ} \
+--fsbl petalinux/images/linux/zynq_fsbl.elf \
+--fpga _vivado/sd_blk.runs/impl_1/system_wrapper.bit \
 --u-boot petalinux/images/linux/u-boot-dtb.elf
 ```
 
