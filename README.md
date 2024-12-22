@@ -9,3 +9,11 @@
 ```shell-session
 $ git clone https://github.com/krtkl/snickerdoodle-board-files.git ${XILINX_VIVADO}/data/xhub/boards/XilinxBoardStore/boards/snickerdoodle-board-files
 ```
+
+***
+
+## References:
+
+- [krtkl website](https://krtkl.com/)
+- [GitHub - board files](https://github.com/krtkl/snickerdoodle-board-files)
+- [GitGub - device tree](https://github.com/krtkl/snickerdoodle-dts)
