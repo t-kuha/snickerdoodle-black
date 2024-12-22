@@ -53,7 +53,7 @@ $ petalinux-package -p ${PRJ} --boot --force \
 |  I/F  | status             |
 |:-----:|:------------------:|
 | Wi-Fi | :heavy_check_mark: |
-| USB   |                    |
+| USB   | :heavy_check_mark: |
 | HDMI (in) |                |
 | HDMI (out) |               |
 | audio |                    |
