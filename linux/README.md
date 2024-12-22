@@ -12,7 +12,7 @@ $ vivado -notrace -nojournal -mode batch -source create_xsa.tcl
 
 ```shell
 $ export PRJ=petalinux
-$ petalinux-config -p ${PRJ}
+$ petalinux-config -p ${PRJ} --get-hw-description=sd_blk.xsa
 
 # Make additional configuration if necessary
 $ petalinux-config -p ${PRJ} -c u-boot
@@ -66,7 +66,7 @@ $ petalinux-package -p ${PRJ} --boot --force \
 ```shell
 $ export PRJ=petalinux
 $ petalinux-create project -n ${PRJ} --template zynq
-$ petalinux-config -p ${PRJ} --get-hw-description=.
+$ petalinux-config -p ${PRJ} --get-hw-description=sd_blk.xsa
 
 # Do some configuration
 $ petalinux-config -p ${PRJ} -c kernel
